@@ -47,8 +47,8 @@ def extract_concepts(file_name, page_number=0):
 with open('page_numbers.json', 'r') as f:
     page_info = json.load(f)
 
-# Get all PDF files in the folder
-pdf_files = sorted(glob.glob("*.pdf"))
+# Get all PDF files in the 'notes' folder
+pdf_files = sorted(glob.glob("notes/*.pdf"))
 
 # Separate the PDF files mentioned in the JSON file and the others
 mentioned_files = [file_name for file_name in pdf_files if file_name in page_info]
