@@ -16,7 +16,8 @@ This Python script extracts concepts from PDF files using Natural Language Proce
 
 You can install the code by running:
 
-```git clone https://github.com/djmahe4/study-csec/
+```bash
+git clone https://github.com/djmahe4/study-csec/
 ```
 
 Before running the script, make sure you have the following Python libraries installed:
