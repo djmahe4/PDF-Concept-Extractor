@@ -56,8 +56,6 @@ Please note that you need to download these books and save them in the same fold
 
 ## Algorithm
 
-Here's a simple ASCII flowchart of the algorithm:
-
 ```
 Start
  |
