@@ -41,6 +41,8 @@ To run the script, simply execute it with Python:
 python script.py
 ```
 
+## Note!: Replace the items within 'page_numbers.json' file with original pdf filename and page number
+
 The script will ask you if you want to continue after processing each file. If you enter 'yes', it will proceed to the next file. If you enter anything else, it will stop processing files and update the 'page_numbers.json' file with the incremented page numbers.
 
 Please save your PDF files within the same directory as the Python script. You can update the page numbers of the PDFs by editing the 'page_numbers.json' file. This file should be a JSON object with filenames as keys and page numbers as values.
