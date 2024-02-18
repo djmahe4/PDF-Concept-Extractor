@@ -40,7 +40,7 @@ To run the script, simply execute it with Python:
 ```bash
 python script.py
 ```
-
+## 
 ## Note!: Replace the items within 'page_numbers.json' file with original pdf filename and page number
 
 The script will ask you if you want to continue after processing each file. If you enter 'yes', it will proceed to the next file. If you enter anything else, it will stop processing files and update the 'page_numbers.json' file with the incremented page numbers.
