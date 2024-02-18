@@ -14,10 +14,9 @@ This Python script extracts concepts from PDF files using Natural Language Proce
 
 ## Installation
 
-You can install them using pip:
+You can install the code by running:
 
-```bash
-pip install PyMuPDF nltk glob2
+```git clone https://github.com/djmahe4/study-csec/
 ```
 
 Before running the script, make sure you have the following Python libraries installed:
