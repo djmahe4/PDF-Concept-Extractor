@@ -2,20 +2,22 @@
 
 # PDF Concept Extractor
 
-This Python script extracts concepts from PDF files using Natural Language Processing (NLP) techniques. It processes PDF files mentioned in a JSON file first along with the page number ( which can be edited manually) and then proceeds to other PDFs in the directory.
+This Python script extracts concepts from PDF files using Natural Language Processing (NLP) techniques. It processes PDF files mentioned in a JSON file first and then proceeds to other PDFs in the directory.
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Suggested Books](#suggested-books)
 - [Algorithm](#algorithm)
 - [License](#license)
 
 ## Installation
 
-Install by running the code:
-```
-git clone https://github.com/djmahe4/study-csec/
+You can install them using pip:
+
+```bash
+pip install PyMuPDF nltk glob2
 ```
 
 Before running the script, make sure you have the following Python libraries installed:
@@ -39,18 +41,29 @@ To run the script, simply execute it with Python:
 python script.py
 ```
 
-The script will ask you if you want to continue after processing each file. If you enter ‘yes’, it will proceed to the next file. If you enter anything else, it will stop processing files and update the ‘page_numbers.json’ file with the incremented page numbers.
+The script will ask you if you want to continue after processing each file. If you enter 'yes', it will proceed to the next file. If you enter anything else, it will stop processing files and update the 'page_numbers.json' file with the incremented page numbers.
 
-Please save your PDF files within the same directory as the Python script. You can update the page numbers of the PDFs by editing the ‘page_numbers.json’ file. This file should be a JSON object with filenames as keys and page numbers as values.
+Please save your PDF files within the same directory as the Python script. You can update the page numbers of the PDFs by editing the 'page_numbers.json' file. This file should be a JSON object with filenames as keys and page numbers as values.
+
+## Suggested Books
+
+The script works with any PDF files, but here are a few suggested books that you can use to test the script:
+
+- "Data Communications and Networking By Behrouz A.Forouzan.pdf"
+- "The web application hacker's handbook_ finding and exploiting security flaws-Wiley (2011).pdf"
+
+Please note that you need to download these books and save them in the same folder for the script to work.
 
 ## Algorithm
+
+Here's a simple ASCII flowchart of the algorithm:
 
 ```
 Start
  |
  |--> Read the page numbers and file names from the .json file
  |
- |--> Get all PDF files in the folder
+ |--> Get all PDF files in the 'materials' folder
  |
  |--> Extract concepts from the PDFs mentioned in the JSON file
  |     |
