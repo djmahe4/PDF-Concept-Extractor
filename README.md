@@ -43,8 +43,6 @@ The script will ask you if you want to continue after processing each file. If y
 
 ## Algorithm
 
-Here's a simple ASCII flowchart of the algorithm:
-
 ```
 Start
  |
