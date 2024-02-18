@@ -60,7 +60,7 @@ Start
  |
  |--> Read the page numbers and file names from the .json file
  |
- |--> Get all PDF files in the 'materials' folder
+ |--> Get all PDF files in the main folder
  |
  |--> Extract concepts from the PDFs mentioned in the JSON file
  |     |
