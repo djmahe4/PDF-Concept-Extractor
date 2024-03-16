@@ -40,6 +40,10 @@ To run the script, simply execute it with Python:
 ```bash
 python script.py
 ```
+If you want the help of generative-ai in learning concepts use the command, only after getting the api key from - https://ai.google.dev/
+```bash
+python new.py
+```
 ## 
 ## Note!: Replace the items within 'page_numbers.json' file with original pdf filename and page number
 
