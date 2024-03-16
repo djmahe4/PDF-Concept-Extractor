@@ -4,11 +4,38 @@ from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk.corpus import stopwords
 import nltk
 import json
-from gemini import pqrst
+#from gemini import pqrst
+import os
+import google.generativeai as genai
+import time
 
 nltk.download('stopwords')
 nltk.download('punkt')
-
+api_key = os.getenv('GENERATIVE_AI_KEY')
+if api_key is None:
+    os.environ['GENERATIVE_AI_KEY'] = input("Enter gen-ai api key:")
+genai.configure(api_key=api_key)
+    
+def pqrst(string,file_name="my_markdown_file.md"):
+    actions=["I would like to create a mind map using the Xmind tool. Can you provide me with some text in Markdown format that is compatible with Xmind? Please include a Central Topic with Main Topics, and any additional information goes to Subtopics that will help create an effective mind map","Preview","questions and answers","deep important concepts","summary of key points","Generate flashcards for the main concepts in the text"]
+    atext=["Mind map","Preview","questions and answers","deep important concepts","summary of key points","Flashcards"]
+    for action,text in zip(actions,atext):
+        prompt_parts = [
+        f"I am a cyber security student and trainee engineer; from {string} ; {action} in markdown format",
+        ]
+        print(action)
+        response=genai.chat(model="models/chat-bison-001",messages=prompt_parts,temperature=0.5)
+        #response = model.generateChat(prompt_parts)
+        print(response.last)
+        with open(file_name, 'a',encoding='utf-8') as file:
+            # Write the response to the file
+            #if actions.index(action)==0:
+                #action="Mind map"
+            #if actions.index(action)==5:
+                #action="Flashcards"
+            file.write(f"```python\n\n '{text}'\n\n```\n\n")
+            file.write(f'{response.last} \n\n')
+        time.sleep(5)
 def extract_concepts(file_name, page_number=0):
     # Open the PDF file
     doc = fitz.open(file_name)
@@ -105,4 +132,3 @@ if other_files!=[]:
         continue_processing = input("\nDo you want to proceed to the next document? (yes/no): ")
         if continue_processing.lower() != 'yes':
             break
-
