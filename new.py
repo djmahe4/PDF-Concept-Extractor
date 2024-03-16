@@ -103,9 +103,6 @@ for file_name in mentioned_files:
     if continue_processing.lower() != 'yes':
         break
 
-if continue_processing.lower() != 'yes':
-    exit()
-
 # Extract concepts from the other PDFs
 if other_files!=[]:
     for file_name in other_files :
